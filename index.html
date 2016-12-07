@@ -1,18 +1,63 @@
+<!DOCTYPE html>
 <html>
-	<head>
-		<script src="js/mail-generator.js"></script>
-		<link href="css/style.css" rel="stylesheet" media="screen">
-    <script>
+<head>
+  <script src="js/mail-generator.js"></script>
+  <link href="css/style.css" rel="stylesheet" media="screen">
+  <title>Gee-Mail</title>
+
+<!-- javascript start -->
+<script>
       window.onload = function(){
-        // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
-        // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
-        
+  		// message counter
+
       };
     </script>
-	</head>
-	<body>
-		<div class="container" id="main">
-			Build Me!
+<!-- javascript end -->
+
+</head>
+
+<!-- all contents start here -->
+<body>
+<div id="main">
+	<div class="container">
+
+<!-- nav info goes here -->
+	<nav id="navBar">
+		<div id="headerTitle">
+			<h1>You've got Gee-Mail !</h1>
 		</div>
-	</body>
+	</nav>
+
+<!-- sidebar info -->
+	<div id="sideBarLinks">
+		<button type="button" class="button"><a href="#">COMPOSE</a></button>
+
+		<ul id="otis">
+     		<li><a href="#">Inbox (<span id="Counter">0</span>)</a></li>
+     		<li><a href="#">Important</a></li>
+     		<li><a href="#">Sent Mail</a></li>
+     		<li><a href="#">Drafts</a></li>
+     		<li><a href="#">Spam</a></li>
+     		<li><a href="#">Trash</a></li>
+    	</ul>
+	</div>
+
+<!-- Date, Sender, Subject Header goes here -->
+	<div id="msgHeader">
+	<ul id="otis">
+   		<li><h4 class="headerDate">Date</h4></li>
+    	<li><h4 class="headerSender">Sender</h4></li>
+    	<li><h4 class="headerSubject">Subject</h4></li>
+    </ul>
+	</div>
+
+<!-- email contents go here -->
+    	<div class="emailStyle" id="msgContent">
+     		<span class="emailStyle Date"></span>
+      		<span class="emailStyle Sender"></span>
+      		<span class="emailStyle Subject"></span>
+		</div>
+</div>
+</div>
+</body>
 </html>
