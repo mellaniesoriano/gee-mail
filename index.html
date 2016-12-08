@@ -5,59 +5,84 @@
   <link href="css/style.css" rel="stylesheet" media="screen">
   <title>Gee-Mail</title>
 
-<!-- javascript start -->
 <script>
-      window.onload = function(){
-  		// message counter
 
-      };
-    </script>
-<!-- javascript end -->
+window.onload = function(){
 
+// counter info
+  var inboxCounter = 0;
+  function newMsg() {
+    msgContent(getNewMessage());
+  }
+
+  function msgContent(msgInfo) {
+    var emails = document.createElement("div");
+    emails.setAttribute("id", "message" + ++inboxCounter);
+    document.getElementById("inboxCounter").innerHTML = inboxCounter;
+    var Message = "msgBody" + inboxCounter;
+    emails.onclick = function() {
+      var status = document.getElementById(Message);
+        if (status.style.display == "none")
+          status.style.display = "block";
+        else
+          status.style.display = "none";
+      }
+
+//email contents
+  var msgCol;
+    msgCol = document.createElement("div");
+    msgCol.setAttribute("class", "date");
+    msgCol.innerHTML = msgInfo.date.toLocaleString();
+    emails.appendChild(msgCol);
+
+    msgCol = document.createElement("div");
+    msgCol.setAttribute("class", "sender");
+    msgCol.innerHTML = msgInfo.sender;
+    emails.appendChild(msgCol);
+
+    msgCol = document.createElement("div");
+    msgCol.setAttribute("class", "subject");
+    msgCol.innerHTML = msgInfo.subject;
+    emails.appendChild(msgCol);
+
+    msgCol = document.createElement("div");
+    msgCol.setAttribute("class", "body");
+    msgCol.style.display = "none";
+    msgCol.setAttribute("id", "msgBody" + inboxCounter);
+    msgCol.innerHTML = msgInfo.body;
+    emails.appendChild(msgCol);
+    document.getElementById("messages")
+    .appendChild(emails);
+  }
+
+//loop messages
+  for (i of window.geemails) {
+    msgContent(i);
+  }
+
+  setInterval(function() {
+    newMsg();
+  }, 2500);
+};
+</script>
 </head>
 
-<!-- all contents start here -->
 <body>
-<div id="main">
-	<div class="container">
-
-<!-- nav info goes here -->
-	<nav id="navBar">
+  <div class="container" id="main">
+	<nav>
 		<div id="headerTitle">
-			<h1>You've got Gee-Mail !</h1>
-		</div>
-	</nav>
+			<h1>You've got Gee-Mail</h1>
 
-<!-- sidebar info -->
-	<div id="sideBarLinks">
-		<button type="button" class="button"><a href="#">COMPOSE</a></button>
+      <a href="#">Compose</a></li> | <a href="#">Inbox (<span id="inboxCounter">0</span>) </a> | <a href="#">Important </a></li> | <a href="#">Sent Mail </a> | <a href="#">Drafts </a> | <a href="#">Spam </a> | <a href="#">Trash </a>
+    </div>
+  </nav>
 
-		<ul id="otis">
-     		<li><a href="#">Inbox (<span id="Counter">0</span>)</a></li>
-     		<li><a href="#">Important</a></li>
-     		<li><a href="#">Sent Mail</a></li>
-     		<li><a href="#">Drafts</a></li>
-     		<li><a href="#">Spam</a></li>
-     		<li><a href="#">Trash</a></li>
-    	</ul>
-	</div>
+    <div class="style" id="messages">
+      <span class="style date"><h3>DATE</h3></span>
+      <span class="style sender"><h3>SENDER</h3></span>
+      <span class="style subject"><h3>SUBJECT</h3></span>
+    </div>
+  </div>
 
-<!-- Date, Sender, Subject Header goes here -->
-	<div id="msgHeader">
-	<ul id="otis">
-   		<li><h4 class="headerDate">Date</h4></li>
-    	<li><h4 class="headerSender">Sender</h4></li>
-    	<li><h4 class="headerSubject">Subject</h4></li>
-    </ul>
-	</div>
-
-<!-- email contents go here -->
-    	<div class="emailStyle" id="msgContent">
-     		<span class="emailStyle Date"></span>
-      		<span class="emailStyle Sender"></span>
-      		<span class="emailStyle Subject"></span>
-		</div>
-</div>
-</div>
 </body>
 </html>
