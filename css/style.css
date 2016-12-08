@@ -1,74 +1,52 @@
-
-.container {
-	width: 800px;
-	margin: 0 auto;
-}
-/* links and misc styling */
+/* header and links */
 a {
 	font-family: Times, serif;
-	color: maroon;
+	color: white;
 	text-decoration: none;
 }
 
 a:hover {
-	background-color: maroon;
-	color: white;
+	color: #c6c6c6;
+	font-weight: bold;
+
 }
 
-#otis li {
-    list-style-type: none;
+nav {
+	margin: auto;
+	text-align: center;
+	background-color: maroon; 
 }
 
 h1 {
-	text-align: center;
-}
-
-/* header section */
-#headerTitle {
 	font-family: cursive;
-	position: center;
-	font-size: 20px;
+	position: left;
+	font-size: 40px;
 	color: white;
-	background-color: maroon;
-	margin: 0px;
+	margin: auto;
 }
 
-/* sidebar section */
-
-#sideBarLinks {
-	float: left;
-	padding: 3px 20px 0px 0px;
-	line-height: 25px;
+/* email content */
+.container {
+  text-align: center;
 }
 
-.button {
-	background-color: #c6c6c6;
-	border: 1px;
-	border-color: black;
-	padding: 7px;
-	color: black;
-	font-weight: bold;
-	font-size: 18px;
-	margin-left: 20px;
+.date {
+	display: inline-block;
+	width: 20%;
+	padding: 5px 0 5px 0;
+	text-align: left;
 }
 
-/* main email section */
-
-.headerDate {
-	float: left;
-	padding-right: 60px;
-	margin-left: 40px;
-	margin-top: 0px;
+.subject {
+	display: inline-block;
+	width: 30%;
+	padding: 5px 0 5px 0;
+	text-align: left;
 }
 
-.headerSender {
-	float: left;
-	padding-right: 60px;
-	margin-top: 0px;
-}
-
-.headerSubject {
-	float: left;
-	padding-left: 20px;
-	margin-top: 0px;
+.sender {
+	display: inline-block;
+	width: 20%;
+	padding: 5px 0 5px 0;
+	text-align: left;
 }
