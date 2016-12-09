@@ -1,28 +1,30 @@
-/* header and links */
+/* header, links, misc */
 a {
-	font-family: Times, serif;
+	font-family: montserrat, arial, helvetica, sans-serif;
 	color: white;
 	text-decoration: none;
 }
 
 a:hover {
-	color: #c6c6c6;
+	color: black;
 	font-weight: bold;
 
 }
 
-nav {
-	margin: auto;
-	text-align: center;
-	background-color: maroon; 
-}
-
 h1 {
-	font-family: cursive;
+	font-family: montserrat, arial, helvetica, sans-serif;
 	position: left;
 	font-size: 40px;
 	color: white;
 	margin: auto;
+}
+
+h3 {
+	padding-bottom: 0px;
+}
+
+img {
+	max-width:100%
 }
 
 /* email content */
@@ -30,23 +32,49 @@ h1 {
   text-align: center;
 }
 
+.style {
+	font-family: montserrat, arial, helvetica, sans-serif;
+	margin-top: 10px;
+	font-weight: lighter; 
+}
+
 .date {
-	display: inline-block;
 	width: 20%;
-	padding: 5px 0 5px 0;
+	display: inline-block;
+	padding: 10px 0 10px 0;
 	text-align: left;
+
 }
 
 .subject {
+	width: 20%;
 	display: inline-block;
-	width: 30%;
-	padding: 5px 0 5px 0;
+	padding: 10px 0 10px 0;
 	text-align: left;
 }
 
 .sender {
 	display: inline-block;
-	width: 20%;
-	padding: 5px 0 5px 0;
+	padding: 10px 0 10px 0;
 	text-align: left;
+	width: 20%
+}
+
+/* sticky navbar */
+.fixed-nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 20px;
+  background-color: #ff7c81;
+  padding: 20px;
+  text-align: center;
+}
+
+#logo {
+	width: 600px;
+	margin-top: 60px;
+
 }
