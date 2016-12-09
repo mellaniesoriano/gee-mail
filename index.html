@@ -2,8 +2,10 @@
 <html>
 <head>
   <script src="js/mail-generator.js"></script>
-  <link href="css/style.css" rel="stylesheet" media="screen">
+  <link href="css/style.css" rel="stylesheet" media="screen" href="https://fonts.googleapis.com/css?family=Monstserrat">
+
   <title>Gee-Mail</title>
+
 
 <script>
 
@@ -62,21 +64,21 @@ window.onload = function(){
 
   setInterval(function() {
     newMsg();
-  }, 2500);
+  }, 4500);
 };
 </script>
 </head>
 
 <body>
-  <div class="container" id="main">
-	<nav>
-		<div id="headerTitle">
-			<h1>You've got Gee-Mail</h1>
-
-      <a href="#">Compose</a></li> | <a href="#">Inbox (<span id="inboxCounter">0</span>) </a> | <a href="#">Important </a></li> | <a href="#">Sent Mail </a> | <a href="#">Drafts </a> | <a href="#">Spam </a> | <a href="#">Trash </a>
-    </div>
+  <nav class="fixed-nav-bar">
+      <a href="#">COMPOSE</a></li> | <a href="#">INBOX (<span id="inboxCounter">0</span>) </a> | <a href="#">IMPORTANT </a></li> | <a href="#">SENT MAIL </a> | <a href="#">DRAFTS </a> | <a href="#">SPAM </a> | <a href="#">TRASH </a>
   </nav>
 
+  <div class="logo">
+    <center><img id="logo" src="http://i68.tinypic.com/ajkkuq.png"></center>
+    </div>
+
+  <div class="container" id="main">
     <div class="style" id="messages">
       <span class="style date"><h3>DATE</h3></span>
       <span class="style sender"><h3>SENDER</h3></span>
