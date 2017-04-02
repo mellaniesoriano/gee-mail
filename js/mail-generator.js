@@ -47,3 +47,66 @@
   window.getNewMessage = getNewMessage;
   loadGeeMails();	
 })();
+
+
+
+//// begin coding:
+
+
+window.onload = function(){
+
+// counter info
+  var inboxCounter = 0;
+  function newMsg() {
+    msgContent(getNewMessage());
+  }
+
+  function msgContent(msgInfo) {
+    var emails = document.createElement("div");
+    emails.setAttribute("id", "message" + ++inboxCounter);
+    document.getElementById("inboxCounter").innerHTML = inboxCounter;
+    var Message = "msgBody" + inboxCounter;
+    emails.onclick = function() {
+      var status = document.getElementById(Message);
+        if (status.style.display == "none")
+          status.style.display = "block";
+        else
+          status.style.display = "none";
+      }
+
+//email contents
+  var msgCol;
+    msgCol = document.createElement("div");
+    msgCol.setAttribute("class", "date");
+    msgCol.innerHTML = msgInfo.date.toLocaleString();
+    emails.appendChild(msgCol);
+
+    msgCol = document.createElement("div");
+    msgCol.setAttribute("class", "sender");
+    msgCol.innerHTML = msgInfo.sender;
+    emails.appendChild(msgCol);
+
+    msgCol = document.createElement("div");
+    msgCol.setAttribute("class", "subject");
+    msgCol.innerHTML = msgInfo.subject;
+    emails.appendChild(msgCol);
+
+    msgCol = document.createElement("div");
+    msgCol.setAttribute("class", "body");
+    msgCol.style.display = "none";
+    msgCol.setAttribute("id", "msgBody" + inboxCounter);
+    msgCol.innerHTML = msgInfo.body;
+    emails.appendChild(msgCol);
+    document.getElementById("messages")
+    .appendChild(emails);
+  }
+
+//loop messages
+  for (i of window.geemails) {
+    msgContent(i);
+  }
+
+  setInterval(function() {
+    newMsg();
+  }, 4500);
+};
